@@ -1,6 +1,7 @@
 import { getAllStops, getStopBySlug, getStopContent } from '@/lib/stops';
 import OpenInMapsButton from '@/components/OpenInMapsButton';
 import { notFound } from 'next/navigation';
+import { marked } from 'marked';
 
 export async function generateStaticParams() {
   const stops = getAllStops();
@@ -11,24 +12,12 @@ interface PageProps {
   params: { slug: string };
 }
 
-function markdownToHtml(md: string): string {
-  return md
-    .replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold text-blue-800 mt-6 mb-2">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold text-blue-900 mt-8 mb-3">$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold text-blue-900 mb-4">$1</h1>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">$1</a>')
-    .replace(/^- (.+)$/gm, '<li class="ml-4 list-disc">$1</li>')
-    .replace(/\n\n/g, '</p><p class="mb-4">');
-}
-
 export default function StopDetailPage({ params }: PageProps) {
   const stop = getStopBySlug(params.slug);
   if (!stop) notFound();
 
   const rawContent = getStopContent(params.slug);
-  const htmlContent = markdownToHtml(rawContent);
+  const htmlContent = marked.parse(rawContent, { async: false }) as string;
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -43,7 +32,7 @@ export default function StopDetailPage({ params }: PageProps) {
       </div>
       <div
         className="prose prose-blue max-w-none mb-8"
-        dangerouslySetInnerHTML={{ __html: `<p class="mb-4">${htmlContent}</p>` }}
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
       <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
         <p className="font-medium mb-1">Image Attribution</p>
