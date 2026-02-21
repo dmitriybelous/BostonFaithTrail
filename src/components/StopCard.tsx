@@ -1,25 +1,55 @@
 import Link from 'next/link';
 import { Stop } from '@/types/stop';
-import OpenInMapsButton from './OpenInMapsButton';
+import { typeIcon } from '@/lib/typeIcon';
 
 interface StopCardProps {
   stop: Stop;
+  index?: number;
 }
 
-export default function StopCard({ stop }: StopCardProps) {
+export default function StopCard({ stop, index }: StopCardProps) {
   return (
-    <div className="border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <div className="p-4">
-        <h2 className="font-bold text-lg text-blue-900 mb-1">{stop.title}</h2>
-        {stop.address && <p className="text-sm text-gray-500 mb-2">{stop.address}</p>}
-        <p className="text-sm text-gray-700 mb-3">{stop.shortSummary}</p>
-        <div className="flex flex-wrap gap-2">
-          <Link href={`/stops/${stop.slug}`} className="text-sm bg-blue-900 text-white px-3 py-1.5 rounded-lg hover:bg-blue-800 transition-colors">
-            Read more
-          </Link>
-          <OpenInMapsButton lat={stop.lat} lng={stop.lng} className="text-sm py-1.5" />
+    <Link href={`/stops/${stop.slug}`} className="block group">
+      <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+        <div className="p-4">
+          {/* Title row */}
+          <div className="flex items-start justify-between gap-2 mb-2">
+            {index !== undefined && (
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-crimson text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                {index + 1}
+              </span>
+            )}
+            <h2 className="font-bold text-base text-gray-900 leading-snug flex-1">{stop.title}</h2>
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-crimson-light flex items-center justify-center text-crimson group-hover:bg-crimson group-hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+                <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Type + year */}
+          <div className="flex items-center gap-2 mb-2">
+            {stop.type && (
+              <span className="inline-flex items-center gap-1 bg-crimson-light text-crimson text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                <span>{typeIcon(stop.type)}</span>
+                {stop.type}
+              </span>
+            )}
+            {stop.year && <span className="text-gray-400 text-sm">{stop.year}</span>}
+          </div>
+
+          {/* Summary */}
+          <p className="text-sm text-gray-600 leading-relaxed mb-2">{stop.shortSummary}</p>
+
+          {/* Address */}
+          {stop.address && (
+            <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-2">
+              <span>📍</span>
+              <span className="truncate">{stop.address}</span>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
