@@ -2,7 +2,7 @@
 
 An interactive Progressive Web App (PWA) for exploring Boston's historic faith communities on a self-guided walking trail. Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and React Leaflet.
 
-🌐 **Live site:** [https://\<your-org\>.github.io/BostonFaithTrail/](https://your-org.github.io/BostonFaithTrail/)
+🌐 **Live site:** [https://dmitriybelous.github.io/BostonFaithTrail/](https://dmitriybelous.github.io/BostonFaithTrail/)
 
 ## Features
 
