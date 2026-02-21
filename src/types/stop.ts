@@ -6,6 +6,8 @@ export interface Stop {
   lng: number;
   shortSummary: string;
   address?: string;
+  year?: number;
+  type?: string;
   heroImage: string;
   imageAttribution: string;
   sources: string[];

@@ -7,6 +7,8 @@
     "lng": -71.0759,
     "shortSummary": "A historic Congregationalist church at Copley Square, built in 1875.",
     "address": "645 Boylston St, Boston, MA 02116",
+    "year": 1875,
+    "type": "Church",
     "heroImage": "/BostonFaithTrail/images/old-south-church.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.oldsouth.org/", "https://en.wikipedia.org/wiki/Old_South_Church"]
@@ -19,6 +21,8 @@
     "lng": -71.0753,
     "shortSummary": "A masterpiece of Richardsonian Romanesque architecture, completed in 1877.",
     "address": "206 Clarendon St, Boston, MA 02116",
+    "year": 1877,
+    "type": "Church",
     "heroImage": "/BostonFaithTrail/images/trinity-church.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.trinitychurchboston.org/", "https://en.wikipedia.org/wiki/Trinity_Church_(Boston)"]
@@ -31,6 +35,8 @@
     "lng": -71.0607,
     "shortSummary": "Founded in 1809, this evangelical church stands at the corner of Park and Tremont Streets.",
     "address": "1 Park St, Boston, MA 02108",
+    "year": 1809,
+    "type": "Church",
     "heroImage": "/BostonFaithTrail/images/park-street-church.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.parkstreet.org/", "https://en.wikipedia.org/wiki/Park_Street_Church"]
@@ -43,6 +49,8 @@
     "lng": -71.0597,
     "shortSummary": "The first Anglican church built in Boston (1686), later becoming the first Unitarian church in America.",
     "address": "58 Tremont St, Boston, MA 02108",
+    "year": 1686,
+    "type": "Church",
     "heroImage": "/BostonFaithTrail/images/kings-chapel.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.kings-chapel.org/", "https://en.wikipedia.org/wiki/King%27s_Chapel"]
@@ -55,6 +63,8 @@
     "lng": -71.0542,
     "shortSummary": "Boston's oldest surviving church (1723), famous for the lanterns that signaled Paul Revere's ride.",
     "address": "193 Salem St, Boston, MA 02113",
+    "year": 1723,
+    "type": "Church",
     "heroImage": "/BostonFaithTrail/images/old-north-church.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.oldnorth.com/", "https://en.wikipedia.org/wiki/Old_North_Church"]
@@ -67,6 +77,8 @@
     "lng": -71.0645,
     "shortSummary": "The mother church of the Roman Catholic Archdiocese of Boston, built in 1875.",
     "address": "1400 Washington St, Boston, MA 02118",
+    "year": 1875,
+    "type": "Cathedral",
     "heroImage": "/BostonFaithTrail/images/holy-cross-cathedral.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://holycrossboston.com/", "https://en.wikipedia.org/wiki/Cathedral_of_the_Holy_Cross_(Boston)"]
@@ -79,6 +91,8 @@
     "lng": -71.1009,
     "shortSummary": "One of New England's largest Reform Jewish congregations, founded in 1854.",
     "address": "477 Longwood Ave, Boston, MA 02215",
+    "year": 1854,
+    "type": "Synagogue",
     "heroImage": "/BostonFaithTrail/images/temple-israel.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.tisrael.org/", "https://en.wikipedia.org/wiki/Temple_Israel_of_Boston"]
@@ -91,6 +105,8 @@
     "lng": -71.0792,
     "shortSummary": "A prominent Boston mosque serving the Muslim community in the Dorchester neighborhood.",
     "address": "35 Intervale St, Boston, MA 02121",
+    "year": 1964,
+    "type": "Mosque",
     "heroImage": "/BostonFaithTrail/images/mosque.jpg",
     "imageAttribution": "Photo: Courtesy of the Islamic Society of Boston",
     "sources": ["https://en.wikipedia.org/wiki/Islamic_Society_of_Boston"]
@@ -103,6 +119,8 @@
     "lng": -71.0698,
     "shortSummary": "Founded in 1665, one of the oldest Baptist congregations in the United States.",
     "address": "110 Commonwealth Ave, Boston, MA 02116",
+    "year": 1665,
+    "type": "Church",
     "heroImage": "/BostonFaithTrail/images/first-baptist.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.firstbaptistchurchinamerica.org/", "https://en.wikipedia.org/wiki/First_Baptist_Church_in_America"]
@@ -115,6 +133,8 @@
     "lng": -71.0610,
     "shortSummary": "A Greek Revival Episcopal cathedral built in 1820, located on Tremont Street across from Boston Common.",
     "address": "138 Tremont St, Boston, MA 02111",
+    "year": 1820,
+    "type": "Cathedral",
     "heroImage": "/BostonFaithTrail/images/saint-pauls.jpg",
     "imageAttribution": "Photo: Public domain via Wikimedia Commons",
     "sources": ["https://www.stpaulboston.org/", "https://en.wikipedia.org/wiki/Saint_Paul%27s_Cathedral_(Boston)"]
