@@ -15,7 +15,7 @@ export default function Navigation() {
       <div className="section-shell py-2 sm:h-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
         <Link href="/" className="font-semibold text-slate-900 text-lg tracking-tight flex items-center gap-2 self-start">
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-navy text-white shadow-sm text-base">🧭</span>
-          <span>Faith Trail</span>
+          <span>Boston Faith Trail</span>
         </Link>
         <div className="grid grid-cols-4 sm:flex gap-1 rounded-xl bg-slate-100 p-1 w-full sm:w-auto">
           {links.map(({ href, label }) => (
