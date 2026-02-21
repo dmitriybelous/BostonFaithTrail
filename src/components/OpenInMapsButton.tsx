@@ -12,7 +12,7 @@ export default function OpenInMapsButton({ lat, lng, label = 'Open in Maps', cla
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-1 bg-green-600 text-white px-3 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors ${className}`}
+      className={`inline-flex items-center gap-1.5 bg-navy text-white px-3 py-2 rounded-xl font-medium hover:bg-navy-light transition-colors shadow-sm ${className}`}
     >
       🗺️ {label}
     </a>

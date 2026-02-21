@@ -4,6 +4,30 @@
 
 @layer base {
   body {
-    @apply bg-cream;
+    @apply bg-cream text-slate-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tight;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply bg-white/95 border border-slate-200/80 rounded-2xl shadow-sm;
+  }
+
+  .surface-card-hover {
+    @apply hover:shadow-md hover:border-slate-300 transition;
+  }
+
+  .section-shell {
+    @apply max-w-5xl mx-auto px-4 sm:px-6;
   }
 }

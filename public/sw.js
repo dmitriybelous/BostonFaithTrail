@@ -1,13 +1,25 @@
 const CACHE_NAME = 'boston-faith-trail-v2';
-const CORE_ASSETS = [
-  '/BostonFaithTrail/',
-  '/BostonFaithTrail/map/',
-  '/BostonFaithTrail/stops/',
-];
+const getBasePath = () => {
+  try {
+    const scopePath = new URL(self.registration.scope).pathname;
+    return scopePath === '/' ? '' : scopePath.replace(/\/$/, '');
+  } catch {
+    return '';
+  }
+};
+
+const CORE_ASSETS = () => {
+  const basePath = getBasePath();
+  return [
+    `${basePath}/`,
+    `${basePath}/map/`,
+    `${basePath}/stops/`,
+  ];
+};
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS).catch(() => {}))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS()).catch(() => {}))
   );
   self.skipWaiting();
 });
