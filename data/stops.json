@@ -2,16 +2,22 @@
   {
     "id": "1",
     "slug": "boston-foundation-monument",
-    "title": "Boston Foundation Monument",
+    "title": "The Founders Memorial",
     "lat": 42.3558,
     "lng": -71.0645,
-    "shortSummary": "A commemorative landmark in central Boston highlighting the city's civic and cultural roots.",
-    "address": "Boston Common area, Boston, MA 02108",
-    "year": 1998,
+    "shortSummary": "A 1930 bronze relief on Boston Common commemorating the founding of Boston, depicting Reverend William Blaxton welcoming Governor John Winthrop to the Shawmut Peninsula in 1630.",
+    "address": "Boston Common, Boston, MA 02108",
+    "year": 1930,
     "type": "Monument",
     "heroImage": "https://en.wikipedia.org/wiki/File:Boston_Common_Aerial_2021.jpg",
     "imageAttribution": "Photo: Wikimedia Commons via Wikipedia",
-    "sources": ["https://en.wikipedia.org/wiki/Boston_Common"]
+    "sources": [
+      "https://www.friendsofthepublicgarden.org/",
+      "https://en.wikipedia.org/wiki/Boston_Common",
+      "https://www.masshist.org/",
+      "https://en.wikipedia.org/wiki/John_Winthrop",
+      "https://en.wikipedia.org/wiki/William_Blaxton"
+    ]
   },
   {
     "id": "2",
