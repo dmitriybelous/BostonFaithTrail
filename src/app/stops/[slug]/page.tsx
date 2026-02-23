@@ -1,5 +1,6 @@
 import { getAllStops, getStopBySlug, getStopContent } from '@/lib/stops';
 import OpenInMapsButton from '@/components/OpenInMapsButton';
+import HeroImage from '@/components/HeroImage';
 import { notFound } from 'next/navigation';
 import { marked } from 'marked';
 
@@ -22,6 +23,15 @@ export default function StopDetailPage({ params }: PageProps) {
   return (
     <div className="section-shell py-8">
       <div className="surface-card p-6 sm:p-8">
+        {/* Hero image with type icon badge */}
+        {stop.heroImage && (
+          <HeroImage
+            heroImage={stop.heroImage}
+            title={stop.title}
+            type={stop.type}
+            className="h-56 sm:h-72 rounded-xl mb-6"
+          />
+        )}
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{stop.title}</h1>
         {stop.address && (
           <p className="text-slate-500 mb-4">
