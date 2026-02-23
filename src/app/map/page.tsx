@@ -1,7 +1,6 @@
 import { getAllStops } from '@/lib/stops';
 import { Stop } from '@/types/stop';
-import Link from 'next/link';
-import { typeIcon } from '@/lib/typeIcon';
+import TrailList from '@/components/TrailList';
 
 function buildGoogleMapsRouteUrl(stops: Stop[]): string {
   if (stops.length === 0) return 'https://www.google.com/maps';
@@ -61,68 +60,7 @@ export default function MapPage() {
           <span className="text-slate-400 text-xs sm:text-sm font-medium whitespace-nowrap">{stops.length} stops</span>
         </div>
 
-        <div className="flex flex-col gap-0">
-          {stops.map((stop, index) => (
-            <div key={stop.id} className="flex items-start gap-3">
-              <div className="flex flex-col items-center flex-shrink-0 pt-1">
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-bold text-sm shadow-sm">
-                  {index + 1}
-                </div>
-                {index < stops.length - 1 && (
-                  <div className="w-px flex-1 min-h-[1.5rem] bg-navy opacity-25 my-1" />
-                )}
-              </div>
-
-              <div className="flex-1 surface-card surface-card-hover mb-4 overflow-hidden">
-                <div className="p-4">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="font-semibold text-lg text-slate-900 leading-snug">{stop.title}</h3>
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${stop.lat},${stop.lng}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-shrink-0 w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-navy hover:text-white transition-colors"
-                      aria-label={`Navigate to ${stop.title}`}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                        <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
-                      </svg>
-                    </a>
-                  </div>
-
-                  <div className="flex items-center gap-2 mb-3">
-                    {stop.type && (
-                      <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wide">
-                        <span>{typeIcon(stop.type)}</span>
-                        {stop.type}
-                      </span>
-                    )}
-                    {stop.year && (
-                      <span className="text-slate-400 text-sm">{stop.year}</span>
-                    )}
-                  </div>
-
-                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{stop.shortSummary}</p>
-
-                  {stop.address && (
-                    <Link
-                      href={`/stops/${stop.slug}`}
-                      className="flex items-center justify-between bg-slate-50 rounded-xl px-3 py-2.5 group hover:bg-slate-100 transition-colors"
-                    >
-                      <div className="flex items-center gap-2 text-sm text-slate-500">
-                        <span className="text-base">📍</span>
-                        <span className="truncate">{stop.address}</span>
-                      </div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-slate-400 flex-shrink-0 group-hover:text-navy transition-colors">
-                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-                      </svg>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <TrailList stops={stops} />
       </div>
     </div>
   );

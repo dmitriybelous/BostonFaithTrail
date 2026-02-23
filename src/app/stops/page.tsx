@@ -1,5 +1,6 @@
 import { getAllStops } from '@/lib/stops';
 import StopCard from '@/components/StopCard';
+import StopsMap from '@/components/StopsMap';
 
 export default function StopsPage() {
   const stops = getAllStops();
@@ -12,6 +13,10 @@ export default function StopsPage() {
             {stops.length} historic faith communities to explore
           </p>
         </div>
+      </div>
+
+      <div className="section-shell pb-6">
+        <StopsMap stops={stops} />
       </div>
 
       <div className="section-shell py-6 pb-12">
