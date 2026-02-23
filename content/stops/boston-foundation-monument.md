@@ -1,4 +1,4 @@
-# The Founders Memorial
+# Boston Foundation Monument
 
 **Boston Common, Boston, Massachusetts**
 *Dedicated 1930 • Sculptor: John Francis Paramino • Est. 1630*
@@ -149,4 +149,4 @@ Though largely unnoticed at the time, Winthrop's "City on a Hill" sermon was pub
 
 ---
 
-*Boston Faith Trail • Stop 1: The Founders Memorial, Boston Common • Content prepared for web and tour guide use.*
+*Boston Faith Trail • Stop 1: Boston Foundation Monument, Boston Common • Content prepared for web and tour guide use.*
