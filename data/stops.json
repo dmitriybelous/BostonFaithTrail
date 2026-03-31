@@ -40,6 +40,27 @@
     ]
   },
   {
+    "id": "2b",
+    "slug": "boston-common-preaching",
+    "title": "Boston Common Preaching",
+    "lat": 42.35565,
+    "lng": -71.06651,
+    "shortSummary": "Boston Common has been hallowed ground for Christian preaching since the Great Awakening — from George Whitefield's 1740 farewell sermon of 23,000 to Billy Graham's 1950 crusade crowd of 50,000.",
+    "address": "Boston Common, Boston, MA 02108",
+    "year": 1740,
+    "type": "Historic Site",
+    "heroImage": "https://en.wikipedia.org/wiki/File:Boston_Common_Aerial_2021.jpg",
+    "imageAttribution": "Photo: Wikimedia Commons via Wikipedia",
+    "sources": [
+      "https://en.wikipedia.org/wiki/George_Whitefield",
+      "https://en.wikipedia.org/wiki/Jonathan_Edwards_(theologian)",
+      "https://en.wikipedia.org/wiki/First_Great_Awakening",
+      "https://en.wikipedia.org/wiki/Billy_Graham",
+      "https://www.billygraham.org/",
+      "https://en.wikipedia.org/wiki/Boston_Common"
+    ]
+  },
+  {
     "id": "3",
     "slug": "park-street-church",
     "title": "Park Street Church",
