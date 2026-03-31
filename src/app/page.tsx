@@ -13,7 +13,7 @@ export default function HomePage() {
 
           <div className="flex justify-center mb-6 relative">
             <div className="bg-white/15 backdrop-blur rounded-3xl w-20 h-20 flex items-center justify-center shadow-lg border border-white/20">
-              <span className="text-4xl">🧭</span>
+              <span className="text-4xl">✝️</span>
             </div>
           </div>
 
