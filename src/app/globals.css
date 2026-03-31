@@ -30,4 +30,61 @@
   .section-shell {
     @apply max-w-5xl mx-auto px-4 sm:px-6;
   }
+
+  /* Enhanced prose styling for tour stop detail content */
+  .prose-faith h1 {
+    @apply text-2xl sm:text-3xl font-bold text-navy tracking-tight mt-10 mb-4;
+  }
+
+  .prose-faith h2 {
+    @apply text-xl sm:text-2xl font-bold text-navy-light tracking-tight mt-10 mb-4 pb-2 border-b border-gold/30;
+  }
+
+  .prose-faith h3 {
+    @apply text-lg sm:text-xl font-semibold text-slate-800 tracking-tight mt-8 mb-3;
+  }
+
+  .prose-faith p {
+    @apply text-base leading-relaxed text-slate-700 mb-4;
+  }
+
+  .prose-faith strong {
+    @apply text-slate-900 font-bold;
+  }
+
+  .prose-faith em {
+    @apply text-slate-600;
+  }
+
+  .prose-faith blockquote {
+    @apply border-l-4 border-gold bg-cream/60 rounded-r-xl pl-5 pr-4 py-4 my-6 italic text-slate-700;
+  }
+
+  .prose-faith blockquote p {
+    @apply mb-2 last:mb-0;
+  }
+
+  .prose-faith ul {
+    @apply my-4 ml-1 space-y-2;
+  }
+
+  .prose-faith ul li {
+    @apply text-base leading-relaxed text-slate-700 pl-2;
+  }
+
+  .prose-faith ol {
+    @apply my-4 ml-1 space-y-2;
+  }
+
+  .prose-faith ol li {
+    @apply text-base leading-relaxed text-slate-700 pl-2;
+  }
+
+  .prose-faith hr {
+    @apply my-8 border-slate-200;
+  }
+
+  .prose-faith a {
+    @apply text-navy underline decoration-gold/40 underline-offset-2 hover:text-navy-light hover:decoration-gold;
+  }
 }

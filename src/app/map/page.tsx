@@ -27,7 +27,7 @@ export default function MapPage() {
 
           <div className="flex justify-center mb-5 relative">
             <div className="bg-white/15 rounded-3xl w-20 h-20 flex items-center justify-center shadow-lg border border-white/20">
-              <span className="text-4xl">🧭</span>
+              <span className="text-4xl">✝️</span>
             </div>
           </div>
 
