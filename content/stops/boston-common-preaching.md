@@ -30,9 +30,7 @@ Edwards never chased crowds. He spoke in a quiet, measured voice. But God moved 
 
 If Edwards was the theologian, George Whitefield was the spark.
 
-In 1740, Whitefield arrived in Boston after touring New England. On September 20, he preached at First Church and then outside it to about 8,000 people who could not get in. The next day he preached outdoors to about 15,000 people. He returned to Boston on October 12 to preach to 30,000 people before continuing his tour.
-
-His farewell sermon on Boston Common drew **23,000 people** — more than Boston's entire population. It was probably the largest crowd that had ever gathered in America up to that date.
+In 1740, Whitefield arrived in Boston after touring New England. On September 20, he preached at First Church and then outside it to about 8,000 people who could not get in. The next day he preached outdoors to about 15,000 people. On October 12 he returned to Boston for his farewell sermon on this very Common — sources estimate the crowd at somewhere between 23,000 and 30,000 people, more than Boston's entire population. It was probably the largest crowd that had ever gathered in America up to that date.
 
 Think about that. More people than lived in the entire city came out to hear one man preach the Gospel.
 
