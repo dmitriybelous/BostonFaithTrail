@@ -31,7 +31,13 @@
     "type": "Statue",
     "heroImage": "https://en.wikipedia.org/wiki/File:Mary_Dyer_by_Sylvia_Shaw_Judson_-_Boston,_MA_-_DSC05489.JPG",
     "imageAttribution": "Photo: Wikimedia Commons via Wikipedia",
-    "sources": ["https://en.wikipedia.org/wiki/Statue_of_Mary_Dyer", "https://en.wikipedia.org/wiki/Mary_Dyer"]
+    "sources": [
+      "https://en.wikipedia.org/wiki/Statue_of_Mary_Dyer",
+      "https://en.wikipedia.org/wiki/Mary_Dyer",
+      "https://archive.org/details/marydyerofrhodei00roge",
+      "https://en.wikipedia.org/wiki/John_Winthrop",
+      "https://en.wikipedia.org/wiki/Sylvia_Shaw_Judson"
+    ]
   },
   {
     "id": "3",
