@@ -18,5 +18,5 @@ Trinity Church was designated a National Historic Landmark in 1970. The church c
 
 - Architectural style: Richardsonian Romanesque
 - Completed: 1877
-- Denomination: Episcopal Church
+- Denomination: Episcopal Church,
 - Architect: Henry Hobson Richardson
