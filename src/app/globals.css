@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+
   body {
-    @apply bg-cream text-slate-800 antialiased;
+    @apply bg-cream text-ink antialiased font-sans;
   }
 
   h1,
@@ -13,78 +18,168 @@
     @apply tracking-tight;
   }
 
-  a {
+  a,
+  button {
     @apply transition-colors;
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-cream;
   }
 }
 
 @layer components {
   .surface-card {
-    @apply bg-white/95 border border-slate-200/80 rounded-2xl shadow-sm;
+    @apply bg-white rounded-2xl shadow-soft ring-1 ring-black/[0.04];
   }
 
   .surface-card-hover {
-    @apply hover:shadow-md hover:border-slate-300 transition;
+    @apply transition duration-200 active:scale-[0.985] hover:shadow-lift;
   }
 
   .section-shell {
     @apply max-w-5xl mx-auto px-4 sm:px-6;
   }
 
-  /* Enhanced prose styling for tour stop detail content */
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-dark;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-3.5 text-[15px] font-semibold text-white shadow-soft hover:bg-navy-light active:scale-[0.98] transition;
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-[15px] font-semibold text-navy shadow-soft hover:bg-cream active:scale-[0.98] transition;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-semibold text-white ring-1 ring-inset ring-white/40 backdrop-blur-sm hover:bg-white/10 active:scale-[0.98] transition;
+  }
+
+  /* Pad content above the fixed mobile tab bar */
+  .pb-tabbar {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  @screen sm {
+    .pb-tabbar {
+      padding-bottom: 3rem;
+    }
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Prose styling for tour stop detail content */
+  .prose-faith {
+    @apply text-[17px] leading-[1.75] text-slate-700;
+  }
+
+  .prose-faith > h1:first-child {
+    @apply hidden;
+  }
+
   .prose-faith h1 {
-    @apply text-2xl sm:text-3xl font-bold text-navy tracking-tight mt-10 mb-4;
+    @apply font-serif text-[28px] font-semibold text-navy mt-10 mb-4;
   }
 
   .prose-faith h2 {
-    @apply text-xl sm:text-2xl font-bold text-navy-light tracking-tight mt-10 mb-4 pb-2 border-b border-gold/30;
+    @apply font-serif text-[24px] font-semibold text-navy mt-10 mb-3;
+  }
+
+  .prose-faith h2::after {
+    content: '';
+    @apply block mt-2 h-px w-10 bg-gold;
   }
 
   .prose-faith h3 {
-    @apply text-lg sm:text-xl font-semibold text-slate-800 tracking-tight mt-8 mb-3;
+    @apply font-serif text-[20px] font-semibold text-ink mt-8 mb-2;
   }
 
   .prose-faith p {
-    @apply text-base leading-relaxed text-slate-700 mb-4;
+    @apply mb-5;
   }
 
   .prose-faith strong {
-    @apply text-slate-900 font-bold;
-  }
-
-  .prose-faith em {
-    @apply text-slate-600;
+    @apply text-ink font-semibold;
   }
 
   .prose-faith blockquote {
-    @apply border-l-4 border-gold bg-cream/60 rounded-r-xl pl-5 pr-4 py-4 my-6 italic text-slate-700;
+    @apply relative my-8 border-0 bg-gold-light/50 rounded-2xl px-5 py-5 font-serif text-[19px] leading-relaxed text-navy;
   }
 
   .prose-faith blockquote p {
-    @apply mb-2 last:mb-0;
+    @apply mb-2 last:mb-0 italic;
+  }
+
+  .prose-faith ul,
+  .prose-faith ol {
+    @apply my-5 pl-5 space-y-2;
   }
 
   .prose-faith ul {
-    @apply my-4 ml-1 space-y-2;
-  }
-
-  .prose-faith ul li {
-    @apply text-base leading-relaxed text-slate-700 pl-2;
+    @apply list-disc marker:text-gold;
   }
 
   .prose-faith ol {
-    @apply my-4 ml-1 space-y-2;
+    @apply list-decimal marker:text-gold-dark marker:font-semibold;
   }
 
-  .prose-faith ol li {
-    @apply text-base leading-relaxed text-slate-700 pl-2;
+  .prose-faith li {
+    @apply pl-1;
   }
 
   .prose-faith hr {
-    @apply my-8 border-slate-200;
+    @apply my-10 border-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent;
   }
 
   .prose-faith a {
-    @apply text-navy underline decoration-gold/40 underline-offset-2 hover:text-navy-light hover:decoration-gold;
+    @apply text-navy underline decoration-gold/50 underline-offset-[3px] hover:decoration-gold;
   }
+
+  .prose-faith img {
+    @apply rounded-2xl my-6;
+  }
+}
+
+/* Leaflet refinements */
+.leaflet-container {
+  @apply font-sans;
+  background: #ebe6dc;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-2xl shadow-lift;
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  @apply shadow-soft rounded-xl overflow-hidden;
+}
+
+.leaflet-control-zoom a {
+  @apply text-navy;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+}
+
+.trail-marker {
+  background: transparent;
+  border: none;
 }

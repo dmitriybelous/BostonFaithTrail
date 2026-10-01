@@ -1,66 +1,64 @@
 import Link from 'next/link';
 import { Stop } from '@/types/stop';
-import { typeIcon } from '@/lib/typeIcon';
 import HeroImage from '@/components/HeroImage';
+import { ChevronRightIcon } from '@/components/Icons';
 
 interface StopCardProps {
   stop: Stop;
   index?: number;
+  variant?: 'feature' | 'row';
 }
 
-export default function StopCard({ stop, index }: StopCardProps) {
-  return (
-    <Link href={`/stops/${stop.slug}`} className="block group">
-      <div className="surface-card surface-card-hover overflow-hidden h-full">
-        {/* Hero image with type icon badge */}
-        {stop.heroImage && (
-          <HeroImage
-            heroImage={stop.heroImage}
-            title={stop.title}
-            type={stop.type}
-            className="h-40 group-hover:[&_img]:scale-105 [&_img]:transition-transform [&_img]:duration-300"
-          />
+export default function StopCard({ stop, index, variant = 'row' }: StopCardProps) {
+  if (variant === 'feature') {
+    return (
+      <Link
+        href={`/stops/${stop.slug}`}
+        className="group relative block overflow-hidden rounded-3xl shadow-soft active:scale-[0.985] transition"
+      >
+        <HeroImage
+          heroImage={stop.heroImage}
+          title={stop.title}
+          className="aspect-[4/5]"
+          imgClassName="transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent" />
+        {index !== undefined && (
+          <span className="absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur text-navy text-sm font-semibold shadow-soft">
+            {index + 1}
+          </span>
         )}
+        <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+          {stop.type && <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold mb-1">{stop.type}</p>}
+          <h3 className="font-serif text-xl font-semibold leading-tight">{stop.title}</h3>
+          {stop.year && <p className="text-xs text-white/70 mt-1">Est. {stop.year}</p>}
+        </div>
+      </Link>
+    );
+  }
 
-        <div className="p-4">
-          {/* Title row */}
-          <div className="flex items-start justify-between gap-2 mb-2">
-            {index !== undefined && (
-              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-crimson text-white text-xs font-bold flex items-center justify-center mt-0.5">
-                {index + 1}
-              </span>
-            )}
-            <h2 className="font-semibold text-base text-slate-900 leading-snug flex-1">{stop.title}</h2>
+  return (
+    <Link href={`/stops/${stop.slug}`} className="group block surface-card surface-card-hover overflow-hidden">
+      <div className="flex items-stretch">
+        <div className="relative w-28 sm:w-36 flex-shrink-0">
+          <HeroImage heroImage={stop.heroImage} title={stop.title} className="h-full min-h-[7.5rem]" />
+          {index !== undefined && (
+            <span className="absolute top-2 left-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 backdrop-blur text-navy text-xs font-semibold shadow-soft">
+              {index + 1}
+            </span>
+          )}
+        </div>
+        <div className="flex-1 min-w-0 p-4 flex flex-col">
+          <div className="flex items-center gap-2 mb-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold-dark">
+            {stop.type && <span>{stop.type}</span>}
+            {stop.type && stop.year && <span className="text-slate-300">·</span>}
+            {stop.year && <span className="text-slate-400">{stop.year}</span>}
           </div>
-
-          {/* Type + year (only if no hero image, since type is shown as badge on image) */}
-          {!stop.heroImage && (
-            <div className="flex items-center gap-2 mb-2">
-              {stop.type && (
-                <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-xs font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide">
-                  <span>{typeIcon(stop.type)}</span>
-                  {stop.type}
-                </span>
-              )}
-              {stop.year && <span className="text-slate-400 text-sm">{stop.year}</span>}
-            </div>
-          )}
-          {stop.heroImage && stop.year && (
-            <div className="mb-2">
-              <span className="text-slate-400 text-sm">{stop.year}</span>
-            </div>
-          )}
-
-          {/* Summary */}
-          <p className="text-sm text-slate-600 leading-relaxed mb-2">{stop.shortSummary}</p>
-
-          {/* Address */}
-          {stop.address && (
-            <div className="flex items-center gap-1.5 text-xs text-slate-400 mt-2">
-              <span>📍</span>
-              <span className="truncate">{stop.address}</span>
-            </div>
-          )}
+          <h3 className="font-serif text-[17px] font-semibold leading-snug text-navy">{stop.title}</h3>
+          <p className="mt-1 text-[13px] leading-relaxed text-slate-500 line-clamp-2">{stop.shortSummary}</p>
+        </div>
+        <div className="flex items-center pr-3 text-slate-300 group-hover:text-navy">
+          <ChevronRightIcon className="w-5 h-5" />
         </div>
       </div>
     </Link>

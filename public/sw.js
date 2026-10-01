@@ -1,4 +1,4 @@
-const CACHE_NAME = 'boston-faith-trail-v2';
+const CACHE_NAME = 'boston-faith-trail-v3';
 const getBasePath = () => {
   try {
     const scopePath = new URL(self.registration.scope).pathname;
