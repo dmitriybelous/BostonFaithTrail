@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         navy: {
           DEFAULT: '#152744',
-          dark: '#0e1c2e',
+          dark: '#0b1628',
           light: '#1e3a5f',
         },
         crimson: {
@@ -22,11 +22,18 @@ const config: Config = {
         gold: {
           DEFAULT: '#c9a44a',
           dark: '#a88035',
+          light: '#f3ead2',
         },
-        cream: '#f5f0e8',
+        cream: '#f7f3ec',
+        ink: '#1c1917',
       },
       fontFamily: {
-        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'Cambria', '"Times New Roman"', 'serif'],
+      },
+      boxShadow: {
+        soft: '0 1px 2px rgba(21,39,68,0.04), 0 4px 16px -4px rgba(21,39,68,0.08)',
+        lift: '0 2px 4px rgba(21,39,68,0.06), 0 12px 32px -8px rgba(21,39,68,0.18)',
       },
     },
   },
